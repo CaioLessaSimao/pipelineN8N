@@ -53,6 +53,7 @@ class Pipeline:
         # This is where you can add your custom pipelines like RAG.
         try:
            print("Entrou no try")
+           print(body["files"])
            if(body["files"]):
                print("Entrou no if")
                return "jorge"
