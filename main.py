@@ -34,8 +34,11 @@ class Pipeline:
 
     async def inlet(self, body: dict, user: dict) -> dict:
         # This function is called before the OpenAI API request is made. You can modify the form data before it is sent to the OpenAI API.
-        #print(f"inlet:{__name__}")
-        
+        print(f"inlet:{__name__}")
+
+        pprint(body)
+        #print(user)
+
         return body
 
     async def outlet(self, body: dict, user: dict) -> dict:
@@ -49,15 +52,7 @@ class Pipeline:
 
     def pipe(
         self, user_message: str, model_id: str, messages: List[dict], body: dict
-    ):
+    ) -> Union[str, Generator, Iterator]:
         # This is where you can add your custom pipelines like RAG.
-        try:
-           print("Entrou no try")
-           print(type(body["files"][0]["file"]["data"]["content"]))
-           if(body["files"]):
-               print("Entrou no if")
-               return "jorge"
-        except:
-           return user_message
         
-               
+        return iter(["Resposta A", "Resposta B", "Resposta C"])
