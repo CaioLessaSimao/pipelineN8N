@@ -54,6 +54,7 @@ class Pipeline:
         try:
            print("Entrou no try")
            if(body["files"]):
+               print("Entrou no if")
                return "jorge"
         except:
            return user_message
