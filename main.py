@@ -56,7 +56,7 @@ class Pipeline:
            print(type(body["files"][0]["file"]["data"]["content"]))
            if(body["files"]):
                print("Entrou no if")
-               yield "jorge"
+               return "jorge"
         except:
            return user_message
         
